@@ -2,7 +2,7 @@
 using System.Text.Json;
 using PlatformService.Dtos;
 
-namespace PlatformService.SyncDataServices.Http;
+namespace PlatformService.DataServices.Sync.Http;
 
 public class HttpCommandDataClients : ICommandDataClient
 {
@@ -18,7 +18,7 @@ public class HttpCommandDataClients : ICommandDataClient
     public async Task SendPlatformToCommand(PlatformReadDto plat)
     {
         var httpContent = new StringContent(
-            JsonSerializer.Serialize(plat), 
+            JsonSerializer.Serialize(plat),
             Encoding.UTF8,
             "application/json");
 
